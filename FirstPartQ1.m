@@ -18,7 +18,7 @@ title('Q)a)');
 %number b compress the function by 3
 subplot(2,2,2);
 x3=x/3;
-yOf3T=FunctionTForQ1(x3);
+yOf3T=FunctionTForQ1(x);
 plot(x3,yOfT);
 title('Q)b)');
 
@@ -33,4 +33,39 @@ title('Q)c)')
 
 %==========================================================================
 %number d 
+%first shift by 4
+%second scale
+%third reflect
+
+subplot(2,2,4);
+%shift
+xShiftOf4=x-4;
+
+%scale
+yOf2t=FunctionTForQ1(x);
+xShiftOf4=xShiftOf4/2;
+
+%reflect
+xShiftOf4=-xShiftOf4;
+
+
+plot(xShiftOf4,yOf2t);
+title('Q)d))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
