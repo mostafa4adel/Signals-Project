@@ -113,69 +113,72 @@ pause;
 
 operate_on_output=input("Enter Y to operate on the signal and N to skip\t:\t","s");
 good_input=1;
-good_input_1=1;
+
 while(good_input)
 
-switch (operate_on_output)
-case 'Y'
-fprintf("Enter \n'a' for Amplitude Scaling.\n'b' for Time reversal.\n'c' for Time shift.\n'd' for Expanding the signal.\n'e' for Compressing the signal.\n'f' for None.");
-operation_wanted=input("","s");
-good_input=1;
-
-while(good_input_1)
-
-switch (operation_wanted)
-  case'a'
-  amp=input("Enter Amplitude");
-  Output_Signal_Y_axis=Output_Signal_Y_axis*amp;
-   good_input_1=0;
-  break;
-case 'b'
-  Output_Signal_X_axis=-Output_Signal_X_axis;
-   good_input_1=0;
-  break;
-case 'c'
-   shift_value=input("Enter the Shift value and sign");
-   Output_Signal_X_axis=Output_Signal_X_axis-shift_value;
-   good_input_1=0;
-  break;
-case 'd'
-  expansion_value=input("Enter the value to Expand the signal");
-  Output_Signal_X_axis=expansion_value*Output_Signal_X_axis;
-   good_input_1=0;
-  break;
-case 'e'
-    compression_value=input("Enter the value to Compress the signal");
-  Output_Signal_X_axis=Output_Signal_X_axis/compression_value;
-   good_input_1=0;
-  break;
-case 'f'
+  switch (operate_on_output)
+  case 'Y'
+  fprintf("Enter \n'a' for Amplitude Scaling.\n'b' for Time reversal.\n'c' for Time shift.\n'd' for Expanding the signal.\n'e' for Compressing the signal.\n'f' for None.\n");
+  operation_wanted=input("","s");
+  good_input_1=1;
   
-  good_input_1=0;
-  break;
-otherwise
-fprintf("!!!!!!!!!!!!!!!!!!UnKown Input!!!!!!!!!!!!!\n");
-operation_wanted=input("Enter Proper Input\t:\t","s");
-
-
-
-endswitch
-endwhile
-
-
-
-
-break;
-case 'N'
-good_input=0;
-break;
-otherwise
-fprintf("!!!!!!!!!!!!!!!!!!UnKown Input!!!!!!!!!!!!!\n");
-operate_on_output=input("Enter Proper Input\t:\t","s");
-
-endswitch
-endwhile
-
+    while(good_input_1)
+    
+    switch (operation_wanted)
+      case'a'
+      amp=input("Enter Amplitude\t:\t");
+      Output_Signal_Y_axis=Output_Signal_Y_axis*amp;
+      good_input_1=0;
+      
+    case 'b'
+      Output_Signal_X_axis=-Output_Signal_X_axis;
+      good_input_1=0;
+      
+    case 'c'
+       shift_value=input("Enter the Shift value and sign\t:\t");
+       Output_Signal_X_axis=Output_Signal_X_axis-shift_value;
+       good_input_1=0;
+     
+    case 'd'
+      expansion_value=input("Enter the value to Expand the signal\t:\t");
+      Output_Signal_X_axis=expansion_value*Output_Signal_X_axis;
+     good_input_1=0;
+     
+    case 'e'
+        compression_value=input("Enter the value to Compress the signal\t:\t");
+      Output_Signal_X_axis=Output_Signal_X_axis/compression_value;
+       good_input_1=0;
+     
+    case 'f'
+      
+      good_input_1=0;
+      good_input=0;
+     
+    otherwise
+    fprintf("!!!!!!!!!!!!!!!!!!UnKown Input!!!!!!!!!!!!!\n");
+    operation_wanted=input("Enter Proper Input\t:\t","s");
+    
+    
+    
+    endswitch
+    endwhile
+    
+    
+    
+    
+    
+      case 'N'
+        good_input=0;
+    
+      otherwise
+        fprintf("!!!!!!!!!!!!!!!!!!UnKown Input!!!!!!!!!!!!!\n");
+        operate_on_output=input("Enter Proper Input\t:\t","s");
+    
+    endswitch
+  endwhile
+  
+  
+  plot(Output_Signal_X_axis,Output_Signal_Y_axis);
 
 
 
