@@ -4,9 +4,12 @@ close all;
 
 t=linspace(0,pi,pi*1000); % taking the function from 0 to pi only 
 x=exp(-t);
-figure (1)
-hold on
+
+subplot(3,2,[1,2]);
 plot(t,x);
+title('X(t)');
+
+
 clear t;
 
 
@@ -18,11 +21,14 @@ xpos=(1./(pi*(1+npos*j*2))).*(1-exp(-pi*(1+npos*2*j)));
 x0=(1-exp(-pi))/pi;
 n=[nneg 0 npos];
 x=[xneg x0 xpos];
-figure (2)
-stem(n,abs(x));
-figure (3)
-stem(n,angle(x));
+subplot(3,2,3);
+stem(n/pi,abs(x));
+title('amplitude spectrum')
 
+
+subplot(3,2,4);
+stem(n/pi,angle(x));
+title("phase spectrum")
 %%======================================================
 
 
@@ -44,8 +50,8 @@ xapprox(k)=sum(x.*(exp(j*n*t*2)));
 end
 
 t=0:.01:pi;
-figure (1)
+subplot(3,2,[5,6]);
 plot(t,xapprox);
-
+title('X(t) approximated');
 
 
