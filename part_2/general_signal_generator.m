@@ -136,7 +136,7 @@ while(good_input)
       
     case 'c'
        shift_value=input("Enter the Shift value and sign\t:\t");
-       Output_Signal_X_axis=Output_Signal_X_axis-shift_value;
+       Output_Signal_X_axis=Output_Signal_X_axis+shift_value;
        good_input_1=0;
      
     case 'd'
