@@ -108,11 +108,14 @@ endfor
 
 
 plot(Output_Signal_X_axis,Output_Signal_Y_axis);
+title("Function Before Operations");
+
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
 operate_on_output=input("Enter Y to operate on the signal and N to skip\t:\t","s");
 good_input=1;
+
 
 while(good_input)
 
@@ -179,8 +182,9 @@ while(good_input)
   
   
   plot(Output_Signal_X_axis,Output_Signal_Y_axis);
-
-
+  title("Function After Operations");
+  
+  
 
 
 

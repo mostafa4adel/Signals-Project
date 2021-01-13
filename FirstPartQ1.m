@@ -50,7 +50,7 @@ xShiftOf4=-xShiftOf4;
 
 
 plot(xShiftOf4,yOf2t);
-title('Q)d))
+title('Q)d)')
 
 
 
