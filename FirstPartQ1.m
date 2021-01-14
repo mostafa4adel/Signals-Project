@@ -1,6 +1,6 @@
 %number a u(t+1) -u(t-3) means from -1 to 3
 
-x=linspace(-1,3,5000);
+x=linspace(-1,3,7000);
 
 
 %5000 point 1000 for each point  

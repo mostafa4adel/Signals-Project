@@ -16,7 +16,7 @@ for i=1:number_of_bp
   k=k+1;
   fprintf("Enter break-point #%d \t:\t",k);
   break_points(k)=input("");
-endfor
+end
 
 
 for i=0:number_of_bp
@@ -40,7 +40,8 @@ for i=0:number_of_bp
     begin_pt=break_points(i);
     end_pt=break_points(i+1);
     
-  endif
+  end
+  
   
   
   
@@ -69,21 +70,21 @@ for i=0:number_of_bp
       coofecients_of_polynomial=[];
       for i_1=0:order_of_polynomial
         coofecients_of_polynomial(i_1+1)=input("Enter Coofecients from the Highest Order\t:\t");
-      endfor
+      end
       operating_on_this_signal=polyval(coofecients_of_polynomial,linspace(begin_pt,end_pt,frequency_sample*(end_pt-begin_pt)));
       
       good_input=0;
       break;
       
       
-    case 'd'
+    Case 'd'
       amp=input("Enter Amplitude\t:\t");
       exponent_of_signal=input("Enter the Exponent\t:\t");
       operating_on_this_signal=amp*exp(exponent_of_signal*(linspace(begin_pt,end_pt,frequency_sample*(end_pt-begin_pt)))); 
       
       good_input=0;
       break;
-    case 'e'
+    Case 'e'
       fprintf("!!!Note input in radians!!!\n");
       amp=input("Enter Amplitude\t:\t");
       f=input("Enter Frequency of the Sinusoidal\t:\t");
@@ -93,17 +94,17 @@ for i=0:number_of_bp
       
       
       good_input=0;
-      break;
-  otherwise
+       
+  Otherwise
     fprintf("!!!!!!!!!!!!!!!!!!UnKown Input!!!!!!!!!!!!!\n");
     wanted_signal=input("Enter Proper Input\t:\t","s");
-endswitch
+end
 
-endwhile
+  end
 
 Output_Signal_Y_axis=horzcat(Output_Signal_Y_axis ,operating_on_this_signal);
 
-endfor
+end
 
 
 
@@ -118,8 +119,7 @@ good_input=1;
 
 
 while(good_input)
-
-  switch (operate_on_output)
+switch (operate_on_output)
   case 'Y'
   fprintf("Enter \n'a' for Amplitude Scaling.\n'b' for Time reversal.\n'c' for Time shift.\n'd' for Expanding the signal.\n'e' for Compressing the signal.\n'f' for None.\n");
   operation_wanted=input("","s");
@@ -163,8 +163,8 @@ while(good_input)
     
     
     
-    endswitch
-    endwhile
+    end
+    end
     
     
     
@@ -173,12 +173,12 @@ while(good_input)
       case 'N'
         good_input=0;
     
-      otherwise
+      Otherwise
         fprintf("!!!!!!!!!!!!!!!!!!UnKown Input!!!!!!!!!!!!!\n");
         operate_on_output=input("Enter Proper Input\t:\t","s");
     
-    endswitch
-  endwhile
+end
+end
   
   
   plot(Output_Signal_X_axis,Output_Signal_Y_axis);
